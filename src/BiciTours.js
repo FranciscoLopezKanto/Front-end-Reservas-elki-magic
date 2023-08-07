@@ -5,31 +5,31 @@ const BiciTours = () => {
     {
      
       name: 'Arriendo de bicicletas por 4 hrs',
-      price: 8.000,
+      price: '8.000',
       image: '/imagenes/bici1.jpg',
     },
     {
       
       name: 'Arriendo de bicicletas medio dia',
-      price: 10.000,
+      price: '10.000',
       image: '/imagenes/bici2.jpg',
     },
     {
       
       name: 'Tour guiado Bicicleta',
-      price: 25.000,
+      price: '25.000',
       image: '/imagenes/tourbici.jpg',
     },
     {
       
       name: 'Descenso Alcohuaz',
-      price: 30.000,
+      price: '30.000',
       image: '/imagenes/alcohuaz.jpg',
     },
     {
       
       name: 'Descenso Pisco del Elqui',
-      price: 25.000,
+      price: '25.000',
       image: '/imagenes/pisco.jpg',
     },
   ];

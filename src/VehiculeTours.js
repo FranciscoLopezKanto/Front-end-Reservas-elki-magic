@@ -5,21 +5,21 @@ const VehicleTour = () => {
     {
       id: 1,
       name: 'Interior del Valle',
-      price: 25000,
+      price: '25.000',
       image: '/imagenes/interiorvalle.jpg',
      
     },
     {
       id: 2,
       name: 'La laguna y Paso Agua Negra',
-      price: 80000,
+      price: '80.000',
       image: '/imagenes/laguna.jpg',
       
     },
     {
       id: 3,
       name: 'Aldrededores de Vicuña',
-      price: 20000,
+      price: '20.000',
       image: '/imagenes/vicuna.jpg',
       
     },
