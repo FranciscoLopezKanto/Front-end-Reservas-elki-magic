@@ -33,7 +33,6 @@ function DatePicker() {
   const [showBlockedDates, setShowBlockedDates] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [reservasEnFecha, setReservasEnFecha] = useState([]); 
-  const [fetchResult, setFetchResult] = useState('');
   const [correo, setCorreo] = useState('');
   const images = [
     '/imagenes/pisco.jpg',
@@ -44,10 +43,10 @@ function DatePicker() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000); // Cambiar la imagen cada 3 segundos
-
-    return () => clearInterval(interval); // Limpiar el intervalo al desmontar el componente
-  }, []);
+    }, 3000);
+  
+    return () => clearInterval(interval);
+  }, [images.length]);  
 
   useEffect(() => {
     axios
@@ -140,7 +139,7 @@ function DatePicker() {
           .post('https://backedpago.fly.dev/reservas', data)
           .then((response) => {
             console.log(response.data);
-            setFetchResult(response.data.message);
+            
     
             window.location.href = response.data.redirectUrl;
           })
