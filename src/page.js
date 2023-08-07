@@ -23,9 +23,9 @@ import Maps from './Maps';
 import SelloCalidad from './SelloCalidad';
 
 function DatePicker() {
-  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedDate, setSelectedDate] = useState(new Date()); // Establecer la fecha actual
   const [cantidad_personas, setCantidadPersonas] = useState('');
-  const [servicioId, setServicioId] = useState('');
+  const [servicioId, setServicioId] = useState('1'); // Establecer el ID del servicio por defecto
   const [servicios, setServicios] = useState([]);
   const [servicioSeleccionado, setServicioSeleccionado] = useState('');
   const [cuposDisponibles, setCuposDisponibles] = useState(0);
@@ -101,7 +101,7 @@ function DatePicker() {
       .catch((error) => {
         console.error(error);
         setReservasEnFecha([]);
-        setServicioSeleccionado('');
+        setServicioSeleccionado('1');
         setCuposDisponibles(0);
       });
   };
@@ -254,7 +254,7 @@ function DatePicker() {
               Hay reservas en la fecha seleccionada del servicio {servicioSeleccionado}.
             </p>
             <p>
-              Cupos  {cuposDisponibles}
+              Cupos: {cuposDisponibles}
             </p>
             <p>
               Cantidad de personas en reservas: {reservasEnFecha.reduce((total, reserva) => total + parseInt(reserva.total_personas), 0)}
@@ -262,7 +262,8 @@ function DatePicker() {
           
           </div>
         )}
-        {!servicioSeleccionado && <p>No hay reservas en la fecha seleccionada.</p>}
+        {!servicioSeleccionado && <p>Cupos: {maxCupos }
+        </p>}
        
 
         <button onClick={saveDateToDatabase}>Pagar</button>
