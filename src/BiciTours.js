@@ -17,13 +17,13 @@ const BiciTours = () => {
     {
       
       name: 'Tour guiado Bicicleta',
-      price: 30000,
+      price: 25000,
       image: '/imagenes/tourbici.jpg',
     },
     {
       
       name: 'Descenso Alcohuaz',
-      price: 10000,
+      price: 30000,
       image: '/imagenes/alcohuaz.jpg',
     },
     {

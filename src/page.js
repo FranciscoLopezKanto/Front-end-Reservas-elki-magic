@@ -119,15 +119,14 @@ function DatePicker() {
 
   const saveDateToDatabase = () => {
     const formattedDate = formatDate(selectedDate);
-
+  
     if (formattedDate && validateServicioId() && validateCantidadPersonas()) {
       const selectedServicio = servicios.find((servicio) => servicio.id === parseInt(servicioId));
       
       if (selectedServicio) {
         const descripcion = `${selectedServicio.nombre} para ${cantidad_personas} persona/s en la fecha ${selectedDate.toLocaleDateString()}`;
-        const selectedServicio = servicios.find((servicio) => servicio.id === parseInt(servicioId));
         const valorServicioSeleccionado = selectedServicio ? selectedServicio.valor_servicio : 0;
-
+  
         const data = {
           servicio_id: parseInt(servicioId),
           fecha_reserva: formattedDate,
@@ -149,7 +148,9 @@ function DatePicker() {
             console.error(error);
           });
       }
-    }}
+    }
+  };
+  
     
   const maxCupos = servicios.find((servicio) => servicio.id === parseInt(servicioId))?.cupos_maximos || 0;
   const toggleBlockedDates = () => {
