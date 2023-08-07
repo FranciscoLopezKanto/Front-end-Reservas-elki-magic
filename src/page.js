@@ -232,7 +232,7 @@ function DatePicker() {
           onChange={(e) => setCantidadPersonas(e.target.value)}
           placeholder={`Cantidad de personas (1-${maxCupos - reservasEnFecha.reduce((total, reserva) => total + parseInt(reserva.total_personas), 0)})`}
           max={maxCupos - reservasEnFecha.reduce((total, reserva) => total + parseInt(reserva.total_personas), 0)}
-          min={servicioSeleccionado ? 1 : 0}
+          min={1}
           style={{ width: '100%', padding: '4px' }}
 />
 
